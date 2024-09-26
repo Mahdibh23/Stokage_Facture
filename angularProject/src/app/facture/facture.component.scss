@@ -1,0 +1,216 @@
+
+/* Style pour le conteneur principal */
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Hauteur de la vue pour s'adapter à la taille de l'écran */
+    padding: 2rem; /* Augmenter le padding pour plus d'espace */
+    box-sizing: border-box;
+    background-color: #f5f5f5; /* Fond très clair pour le contraste */
+}
+
+/* Style pour le nav */
+nav {
+    display: flex;
+    align-items: center;
+    background-color: rgb(212, 206, 199); /* Couleur beige clair */
+    padding: 12px 24px; /* Ajout de padding pour plus de confort */
+    margin-bottom: 50px;
+    border-bottom: 1px solid #ddd; /* Bordure inférieure pour une séparation subtile */
+}
+
+/* Style pour les boutons du nav */
+.nav-left button,
+.nav-right button {
+    background-color: #d6bfa9; /* Couleur beige clair */
+    border: none;
+    padding: 0.75rem 1.5rem; /* Ajustement du padding pour une meilleure proportion */
+    font-size: 1rem; /* Taille de police légèrement réduite pour l'harmonie */
+    border-radius: 6px; /* Coins légèrement arrondis */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+/* Style pour les boutons de gauche et de droite au survol */
+.nav-left button:hover,
+.nav-right button:hover {
+    background-color: #b89a77; /* Couleur beige moyen pour le survol */
+    transform: scale(1.05); /* Légère agrandissement au survol */
+}
+
+/* Style pour la zone centrale du nav */
+.nav-center {
+    flex: 3; /* Prend tout l'espace restant entre les éléments de gauche et de droite */
+    display: flex;
+    justify-content:center; /* Centre le contenu horizontalement */
+    align-items:center; /* Centre le contenu verticalement */
+    font-size: 1rem; /* Taille de police légèrement réduite pour l'harmonie */
+
+}
+
+/* Style pour le champ de recherche */
+.input-group {
+    max-width: 400px; /* Largeur maximale pour le champ de recherche */
+    width: 100%;
+    margin: 0 auto; /* Centrer le champ de recherche */
+}
+
+.input-group .form-control {
+    border-radius: 6px; /* Coins arrondis pour le champ de recherche */
+    border: 1px solid #ced4da; /* Bordure subtile */
+    padding: 0.75rem 1rem; /* Ajustement du padding */
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group .form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Style pour le conteneur des détails de l'entreprise et des factures */
+.company {
+    flex: 1;
+}
+
+/* Style pour le formulaire d'envoi d'image */
+form {
+    display: flex;
+    align-items: center; /* Aligner les éléments verticalement au centre */
+    margin-bottom: 2rem; /* Espacement sous le formulaire */
+    padding: 1rem; /* Ajouter du padding pour plus d'espace interne */
+    background-color: #ffffff; /* Fond blanc pour plus de contraste */
+    border-radius: 8px; /* Coins arrondis pour un look moderne */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Ombre légère pour une apparence élevée */
+}
+
+/* Style pour le champ de fichier */
+form input[type="file"] {
+    margin-right: 1rem; /* Espacement à droite du champ de fichier */
+    border: 1px solid #d6bfa9; /* Bordure beige clair */
+    padding: 0.5rem; /* Espacement interne */
+    border-radius: 6px; /* Coins arrondis pour le champ */
+    background-color: #f9f3f0; /* Fond beige clair */
+    flex: 1; /* Permet au champ de fichier d'utiliser l'espace disponible */
+    box-sizing: border-box; /* Inclure les bordures et le padding dans la largeur */
+}
+
+/* Style pour le bouton de soumission */
+form button {
+    background-color: #d6bfa9; /* Couleur beige clair */
+    color: #3c3c3b; /* Texte sombre pour le contraste */
+    border: none;
+    padding: 0.75rem 1.5rem; /* Espacement confortable */
+    font-size: 1.1rem;
+    border-radius: 8px; /* Coins arrondis pour le bouton */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Style pour le bouton désactivé */
+form button:disabled {
+    background-color: #c2b59e; /* Couleur grisée pour les boutons désactivés */
+    cursor: not-allowed; /* Changer le curseur pour indiquer que le bouton est désactivé */
+}
+
+/* Style pour le bouton au survol */
+form button:hover:enabled {
+    background-color: #b89a77; /* Couleur beige moyen pour le survol */
+    transform: scale(1.05); /* Légère agrandissement au survol */
+}
+
+/* Style pour le conteneur des détails de l'entreprise */
+.company-details {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #ffffff; /* Fond blanc pour les détails */
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Style pour la liste des factures et des reçus */
+.invoices-list {
+    margin-bottom: 2rem;
+}
+
+/* Style pour le conteneur du tableau avec boutons de défilement */
+.table-container {
+    position: relative;
+    max-height: 600px; /* Augmenter la hauteur du conteneur */
+    overflow: hidden;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.table-wrapper {
+  height: 400px; /* or whatever height you need */
+  overflow-y: auto;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 12px; /* Agrandir le padding des cellules du tableau */
+    border: 1px solid #d6bfa9; /* Couleur de bordure beige clair */
+    text-align: left;
+}
+
+table th {
+    background-color: #d6bfa9; /* Couleur de fond beige clair pour les en-têtes */
+    color: #3c3c3b; /* Texte sombre pour le contraste */
+    font-weight: bold;
+}
+
+table tr:nth-child(even) {
+    background-color: #f7f2ef; /* Couleur de fond beige très clair pour les lignes paires */
+}
+
+table tr:hover {
+    background-color: #e0d7d1; /* Couleur de survol beige très clair */
+}
+
+/* Style pour les boutons de défilement */
+.scroll-btn {
+    position: absolute;
+    border: none;
+    color: #3c3c3b; /* Texte sombre pour le contraste */
+    font-size: 10px; /* Taille de la police réduite */
+    cursor: pointer;
+    padding: 8px 12px; /* Padding réduit */
+    opacity: 0.8;
+    transition: opacity 0.3s, background-color 0.3s, transform 0.2s;
+    z-index: 10;
+}
+
+.scroll-btn:hover {
+    opacity: 1;
+    background-color: #b89a77; /* Couleur beige moyen pour le survol */
+    transform: scale(1.05); /* Légère agrandissement au survol */
+}
+
+.scroll-up {
+    top: 10px;
+    right: 10px;
+}
+
+.scroll-down {
+    bottom: 10px;
+    right: 10px;
+}
+
+/* Optionnel : Ajout d'une légère animation pour le défilement */
+.scroll-btn::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+}

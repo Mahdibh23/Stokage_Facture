@@ -1,0 +1,158 @@
+<main>
+  <nav>
+    <div class="nav-left">
+      <button (click)="goBack()">
+        <i class="fas fa-arrow-left"></i> Retour
+      </button>
+    </div>
+    <div class="nav-center">
+      <div class="row">
+        <div class="col-12">
+          <div class="input-group mb-3"></div>
+        </div>
+      </div>
+    </div>
+    <div class="nav-right" *ngIf="!isDisabledEntreprisesPage">
+      <button (click)="disableFunction()">
+        <i class="fas fa-ban"></i> Désactiver
+      </button>
+    </div>
+  </nav>
+  <div class="company">
+    <div class="company-details" *ngIf="entreprise">
+      <h2>{{ entreprise.name }}</h2>
+      <p>{{ entreprise.description }}</p>
+      <p>{{ entreprise.adresse }}</p>
+      <p>Total Amount: {{ entreprise.totalAmount }}</p>
+    </div>
+    <div class="invoices-list">
+      <h3>Liste des Factures</h3>
+      <form #imageForm="ngForm" (submit)="onSubmitFacture($event)">
+        <input
+          type="file"
+          (change)="onFileSelected($event)"
+          accept="image/*"
+          required
+        />
+        <button type="submit" [disabled]="!selectedImage">
+          Envoyer l'image
+        </button>
+      </form>
+      <div class="table-container" *ngIf="factures && factures.length">
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Numéro de Facture</th>
+                <th>Date</th>
+                <th>Montant</th>
+                <th>Objet</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let facture of factures">
+                <td>{{ facture.invoice_number }}</td>
+                <td>{{ facture.date | date : "yyyy-MM-dd" }}</td>
+                <td>{{ facture.amount }}</td>
+                <td>{{ facture.objet }}</td>
+                <td>
+                  <div *ngIf="facture.filePath">
+                    <a
+                      *ngIf="facture.filePath.endsWith('.pdf')"
+                      [href]="facture.filePath"
+                      target="_blank"
+                      class="open-link"
+                    >
+                      Ouvrir la facture (PDF)
+                    </a>
+                    <a
+                      *ngIf="
+                        facture.filePath.endsWith('.jpg') ||
+                        facture.filePath.endsWith('.png')
+                      "
+                      [href]="facture.filePath"
+                      target="_blank"
+                      class="open-link"
+                    >
+                      Ouvrir la facture (Image)
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <button class="scroll-btn scroll-up" (click)="scrollUp()">
+          &#9650;
+        </button>
+        <button class="scroll-btn scroll-down" (click)="scrollDown()">
+          &#9660;
+        </button>
+      </div>
+      <p></p>
+      <div class="receipts-list">
+        <h3>Liste des Recus</h3>
+        <form #imageForm="ngForm" (submit)="onSubmitRecu($event)">
+          <input
+            type="file"
+            (change)="onFileSelected($event)"
+            accept="image/*"
+            required
+          />
+          <button type="submit" [disabled]="!selectedImage">
+            Envoyer l'image
+          </button>
+        </form>
+        <div class="table-container" *ngIf="recus && recus.length">
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Montant</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let recu of recus">
+                  <td>{{ recu.date | date : "yyyy-MM-dd" }}</td>
+                  <td>{{ recu.amount }}</td>
+                  <td>
+                    <div *ngIf="recu.filePath">
+                      <a
+                        *ngIf="recu.filePath.endsWith('.pdf')"
+                        [href]="recu.filePath"
+                        target="_blank"
+                        class="open-link"
+                      >
+                        Ouvrir la recu (PDF)
+                      </a>
+                      <a
+                        *ngIf="
+                          recu.filePath.endsWith('.jpg') ||
+                          recu.filePath.endsWith('.png')
+                        "
+                        [href]="recu.filePath"
+                        target="_blank"
+                        class="open-link"
+                      >
+                        Ouvrir la facture (Image)
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <button class="scroll-btn scroll-up" (click)="scrollUp()">
+            &#9650;
+          </button>
+          <button class="scroll-btn scroll-down" (click)="scrollDown()">
+            &#9660;
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

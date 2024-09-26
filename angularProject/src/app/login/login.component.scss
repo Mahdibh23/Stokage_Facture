@@ -1,0 +1,180 @@
+/* Global Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1E88E5, #E53935, #43A047);
+
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  color: #333;
+}
+
+.container {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* Largeur maximale du conteneur */
+  width: 100%; /* Conteneur prend toute la largeur disponible */
+  box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur totale */
+  position: fixed;
+
+}
+
+/* Card */
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  width: 740px; /* Largeur de la carte */
+  right: 50%;
+
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Title */
+.card-title {
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #1E88E5; /* Bleu du logo */
+}
+
+/* Form */
+form {
+  display: flex;
+  flex-direction: column; /* Empiler les éléments du formulaire verticalement */
+  width: 100%; /* Formulaire prend toute la largeur du conteneur */
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 20px;
+  width: 100%; /* Groupes de formulaire prennent toute la largeur disponible */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px; /* Augmenter l'espace sous le label */
+  font-weight: bold;
+  color: #555;
+  font-size: 16px; /* Augmenter la taille du texte du label */
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%; /* Éléments de formulaire prennent toute la largeur disponible */
+  padding: 15px; /* Augmenter le padding pour un espace d'écriture plus grand */
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.2s ease-in-out;
+  box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur totale */
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #1E88E5; /* Bleu du logo */
+  outline: none;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 12px; /* Augmenter le padding pour des boutons plus confortables */
+  font-size: 18px;
+  color: #fff;
+  background-color: #1E88E5; /* Rose du logo */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #0458a0; /* Rose foncé pour le hover */
+  transform: translateY(-2px);
+}
+
+/* Nav */
+nav {
+  position: fixed; /* Fixer la position de la fenêtre de navigation */
+  top: 0;
+  width: 100%; /* La navigation prend toute la largeur */
+  background-color: #1E88E5; /* Couleur de fond */
+  padding: 10px; /* Padding pour le contenu */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Assurer que la navigation reste au-dessus des autres contenus */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.2s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #E53935;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px; /* Ajuster le padding pour les petits écrans */
+    width: 100%; /* Assurer que le conteneur prend toute la largeur de l'écran */
+  }
+
+  .card-title {
+    font-size: 20px;
+  }
+
+  .btn {
+    font-size: 16px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 14px; /* Réduire la taille du texte pour les petits écrans */
+    padding: 12px; /* Réduire le padding pour les petits écrans */
+  }
+
+  nav ul {
+    flex-direction: column; /* Empiler les éléments de navigation verticalement */
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+}

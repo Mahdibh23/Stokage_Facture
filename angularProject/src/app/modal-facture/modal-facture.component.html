@@ -1,0 +1,27 @@
+<h4>Ajouter une Facture</h4>
+<form [formGroup]="factureForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="invoiceNumber">Numéro de Facture:</label>
+    <input id="invoiceNumber" formControlName="invoiceNumber" required />
+  </div>
+
+  <div>
+    <label for="date">Date:</label>
+    <input id="date" formControlName="date" required />
+  </div>
+
+  <div>
+    <label for="amount">Montant:</label>
+    <input id="amount" formControlName="amount" type="number" required />
+  </div>
+
+  <div>
+    <label for="objet">Objet:</label>
+    <input id="objet" formControlName="objet" required />
+  </div>
+
+  <div>
+    <button type="button" (click)="close()">Annuler</button>
+    <button type="submit" [disabled]="factureForm.invalid">Ajouter</button>
+  </div>
+</form>

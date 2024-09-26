@@ -1,0 +1,82 @@
+<script
+  defer
+  src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"
+></script>
+<main class="main">
+  <div id="wrapper" class="animate">
+    <nav
+      class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark"
+    >
+      <a class="navbar-brand" href="/home"></a>
+      <div class="row">
+        <div class="col-12">
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Rechercher..."
+              [(ngModel)]="searchTerm"
+              (ngModelChange)="onSearchChange()"
+            />
+          </div>
+        </div>
+      </div>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarText"
+        aria-controls="navbarText"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav animate side-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/home" title="Recherche">
+              <i class="fas fa-search"></i> Home
+              <i class="fas fa-search shortmenu animate"></i>
+            </a>
+          </li>
+          <li class="nav-item" (click)="openAddCompanyModal()">
+            <a class="nav-link" title="Ajouter entreprise">
+              <i class="fas fa-building"></i> Ajouter entreprise
+              <i class="fas fa-building shortmenu animate"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/disabled-entreprises" title="Désactiver">
+              <i class="fas fa-ban"></i> Désactiver
+              <i class="fas fa-ban shortmenu animate"></i>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()" href="#" title="Déconnexion">
+              <i class="fas fa-sign-out-alt"></i>Déconx
+              <i class="fas fa-sign-out-alt shortmenu animate"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="row">
+      <div *ngFor="let entreprise of filteredEntreprises" class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ entreprise.name }}</h5>
+            <p class="card-text">{{ entreprise.description }}</p>
+            <p class="card-text">{{ entreprise.adresse }}</p>
+            <a
+              [routerLink]="['/entreprise/', entreprise.id, 'factures']"
+              class="card-link"
+              >Details</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<app-formulaire (companyAdded)="onCompanyAdded($event)"></app-formulaire>

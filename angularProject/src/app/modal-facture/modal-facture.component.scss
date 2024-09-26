@@ -1,0 +1,93 @@
+/* Style pour le conteneur du formulaire */
+form {
+  margin: 0 auto;
+  padding: 1rem;
+  max-width: 500px;
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour les en-têtes */
+h4 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #0044cc;
+}
+
+/* Style pour les groupes de formulaires */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Style pour les étiquettes */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style pour les champs de saisie */
+input.form-control {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  box-sizing: border-box;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+input.form-control:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* Style pour les actions du formulaire */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Style pour les boutons */
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+button.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+button.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+button.btn-primary {
+  background-color: #0044cc;
+  color: white;
+}
+
+button.btn-primary:hover {
+  background-color: #003bb5;
+}
+
+/* Style pour la responsivité */
+@media (max-width: 600px) {
+  form {
+    padding: 1rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

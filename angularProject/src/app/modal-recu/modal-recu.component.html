@@ -1,0 +1,17 @@
+<h4>Ajouter un Reçu</h4>
+<form [formGroup]="recuForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="date">Date:</label>
+    <input id="date" formControlName="date" required />
+  </div>
+
+  <div>
+    <label for="amount">Montant:</label>
+    <input id="amount" formControlName="amount" type="number" required />
+  </div>
+
+  <div>
+    <button type="button" (click)="close()">Annuler</button>
+    <button type="submit" [disabled]="recuForm.invalid">Ajouter</button>
+  </div>
+</form>

@@ -1,0 +1,77 @@
+<div class="modal" tabindex="-1" role="dialog" id="addCompanyModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Ajoute entreprise</h5>
+        <button
+          type="button"
+          class="close"
+          (click)="closeModal()"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="onSubmit()" #companyForm="ngForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              required
+              [(ngModel)]="company.name"
+              name="name"
+            />
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input
+              type="text"
+              class="form-control"
+              id="description"
+              required
+              [(ngModel)]="company.description"
+              name="description"
+            />
+          </div>
+          <div class="form-group">
+            <label for="adresse">Adresse</label>
+            <input
+              type="text"
+              class="form-control"
+              id="adresse"
+              required
+              [(ngModel)]="company.adresse"
+              name="adresse"
+            />
+          </div>
+          <div class="form-group">
+            <label for="code">Code</label>
+            <input
+              type="text"
+              class="form-control"
+              id="code"
+              required
+              [(ngModel)]="company.code"
+              name="code"
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              required
+              [(ngModel)]="company.email"
+              name="email"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

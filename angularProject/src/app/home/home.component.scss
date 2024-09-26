@@ -1,0 +1,223 @@
+/* Style du corps de la page */
+body {
+    background: #f0f4f8; /* Couleur de fond gris clair pour un contraste doux */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Police moderne et lisible */
+    color: #333; /* Couleur du texte pour une bonne lisibilité */
+    margin: 0; /* Supprimer les marges par défaut */
+    padding: 0; /* Supprimer le padding par défaut */
+    line-height: 1.6; /* Améliorer la lisibilité du texte avec une hauteur de ligne appropriée */
+    overflow-x: hidden; /* Empêcher le défilement horizontal */
+    transition: background-color 0.3s ease; /* Transition fluide pour les changements de couleur de fond */
+}
+
+/* Style du wrapper pour le contenu principal */
+#wrapper {
+    padding: 20px 15px; /* Réduction du padding pour plus d'espace au-dessus et en dessous du contenu */
+    margin: 0 auto; /* Centre le wrapper horizontalement */
+    max-width: 1200px; /* Largeur maximale pour maintenir une bonne mise en page */
+    background: #ffffff; /* Fond blanc pour le wrapper pour un contraste clair avec le fond du body */
+    border-radius: 8px; /* Coins arrondis pour un effet moderne */
+    box-shadow: 0 4px 8px rgba(0, 0, 255, 0.1); /* Ombre bleue légère pour un effet de profondeur */
+}
+
+/* Style des cartes */
+.card {
+    margin-bottom: 15px;
+    border-radius: 8px; /* Arrondir légèrement les coins pour une apparence plus moderne */
+    box-shadow: 0 4px 8px rgba(0, 102, 255, 0.2); /* Ombre bleue plus douce pour un effet subtil */
+    background: #ffffff; /* Fond blanc pour les cartes, offrant un bon contraste avec le texte */
+    border: 1px solid #dbe2ef; /* Bordure bleue très claire pour délimiter la carte */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transition fluide pour les effets de survol */
+}
+
+/* Style du header */
+.header-top {
+    box-shadow: 0 4px 8px rgba(0, 51, 255, 0.2); /* Ombre bleue pour un effet de profondeur */
+    background: #ffffff; /* Fond blanc pour un contraste net avec les éléments au-dessus */
+    border-bottom: 1px solid #dbe2ef; /* Bordure inférieure bleue très claire pour délimiter la section */
+    transition: box-shadow 0.3s ease, background-color 0.3s ease; /* Transition fluide pour les effets */
+}
+
+.leftmenutrigger,
+.navbar-nav li a .shortmenu {
+    display: none;
+}
+
+.card-title {
+    font-size: 28px;
+}
+
+@media (min-width: 992px) {
+    #wrapper {
+        padding: 90px 20px 20px 80px; /* Ajuster le padding pour plus d'espace autour du contenu */
+        margin: 0 auto; /* Centrer le wrapper horizontalement */
+        max-width: 1200px; /* Définir une largeur maximale pour le wrapper */
+        box-shadow: 0 4px 8px rgba(0, 0, 255, 0.1); /* Ombre bleue subtile pour un effet de profondeur */
+        background: #ffffff; /* Assurer que le fond est blanc pour une meilleure lisibilité */
+        border-radius: 8px; /* Ajouter des coins arrondis pour une apparence plus moderne */
+    }
+
+    .navbar-nav.side-nav:hover {
+        left: 0;
+    }
+
+    .side-nav li a {
+        padding: 20px; /* Espacement intérieur pour les éléments de menu */
+    }
+
+    .navbar-nav li a .shortmenu {
+        float: right;
+        display: block;
+        opacity: 1;
+    }
+
+    .navbar-nav.side-nav:hover li a .shortmenu {
+        opacity: 0;
+    }
+
+    .navbar-nav.side-nav {
+        background: #c2b59e; /* Couleur de fond bleue plus foncée pour la barre de navigation */
+        box-shadow: 2px 1px 2px rgba(176, 215, 255, 0.2); /* Ombre bleue légère pour l'effet de profondeur */
+        position: fixed; /* Position fixe pour garder la barre visible lors du défilement */
+        top: 56px;
+        flex-direction: column !important;
+        left: -140px;
+        width: 200px;
+        overflow-y: auto;
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+        transition: left 0.3s ease, box-shadow 0.3s ease; /* Transition fluide pour les animations */
+    }
+}
+
+.animate {
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.navbar-nav li a svg {
+    font-size: 25px; /* Taille des icônes SVG */
+    float: left; /* Alignement à gauche */
+    margin: 0 10px 0 5px; /* Espacement autour des icônes */
+}
+
+.side-nav li {
+    border-bottom: 1px solid #b7bed4; /* Bordure bleue pour délimiter les éléments de la barre de navigation */
+}
+
+.input-group {
+    width: 300px; /* Largeur des groupes d'entrée */
+}
+
+.form-control {
+    background: #e9ecef; /* Fond gris clair pour un contraste doux */
+    border: 1px solid #ced4da; /* Bordure grise pour une finition propre */
+    border-radius: 4px; /* Coins légèrement arrondis pour un effet moderne */
+    color: #495057; /* Couleur du texte pour une bonne lisibilité */
+    padding: 10px 15px; /* Espacement intérieur pour plus de confort */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition fluide pour les effets */
+}
+
+/* Style pour le champ de formulaire au focus */
+.form-control:focus {
+    background: #ffffff; /* Fond blanc lors de la concentration pour un contraste net */
+    border-color: #007bff; /* Bordure bleue pour indiquer la concentration */
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.25); /* Ombre bleue pour attirer l'attention */
+    outline: none; /* Supprimer le contour par défaut lors de la concentration */
+}
+
+.input-group-text {
+    background: #d5d6da; /* Fond bleu pour les textes des groupes d'entrée */
+    border: 1px solid #edf1fa; /* Bordure bleue pour les textes des groupes d'entrée */
+    color: #fff; /* Couleur du texte en blanc pour une bonne lisibilité */
+}
+
+.input-group {
+    background: white;
+}
+
+/* Style de la navbar */
+/* Style de la navbar */
+.navbar {
+    background-color: #c5a876 !important; /* Couleur de fond bleue pour la navbar avec !important pour surclasser les autres styles */
+    width:100%;
+}
+
+/* Assurez-vous que la navbar a le bon style pour le texte */
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff !important; /* Couleur du texte des liens en blanc avec !important pour garantir l'application */
+}
+
+
+/* Couleur des liens actifs ou au survol dans la navbar */
+.navbar-nav .nav-item.active .nav-link,
+.navbar-nav .nav-item .nav-link:hover {
+    color: #e0e0e0 !important; /* Couleur du texte des liens actifs ou au survol en gris clair avec !important */
+}
+/* Assurer que le formulaire prend toute la largeur disponible */
+app-formulaire {
+    display: block; /* Assurer que le composant prend toute la largeur disponible */
+    width: 100%; /* Prendre toute la largeur du conteneur parent */
+  }
+
+  form {
+    display: flex;
+    flex-direction: column; /* Empiler les éléments verticalement */
+    width: 100%; /* Assurer que le formulaire prend toute la largeur disponible */
+  }
+
+  /* Form Group */
+  .form-group {
+    margin-bottom: 20px;
+    width: 100%; /* Assurer que les groupes de formulaire prennent toute la largeur */
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 10px; /* Espacement sous le label */
+    font-weight: bold;
+    color: #555;
+    font-size: 16px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%; /* Les champs de formulaire prennent toute la largeur disponible */
+    padding: 12px; /* Augmenter le padding pour un espace d'écriture plus grand */
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.2s ease-in-out;
+    box-sizing: border-box; /* Inclure le padding et la bordure dans la largeur totale */
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: #1E88E5; /* Couleur de la bordure au focus */
+    outline: none;
+  }
+
+  /* Button */
+  .btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #E53935; /* Couleur de fond du bouton */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  }
+
+  .btn:hover {
+    background-color: #D32F2F; /* Couleur de fond au survol */
+    transform: translateY(-2px);
+  }
